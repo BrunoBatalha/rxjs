@@ -1,7 +1,7 @@
 /**
- * - aniversário porteiro sem observer
- - pessoa que faz supressa fica olhando 
- toda hora se aniversariante tá chegando
+ - A festa surpresa no apartamento...
+ - sem obsever
+ - líder da festa fica olhando toda hora se aniversariante está chegando
  */
 const readline = require("readline");
 let count = Math.floor(Math.random() * 10) + 5;
@@ -15,9 +15,9 @@ function olharPelaJanela() {
   }
 }
 
-terminal();
+client();
 
-async function terminal() {
+async function client() {
   console.log("Tá perto dele chegar...");
   while (true) {
     const resp = await readInput("Olhar se chegou? s/n");

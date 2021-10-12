@@ -1,10 +1,7 @@
-/** 1
-- aniversário porteiro com observer
-[estoria]: lider da festa pede para porteiro avisar quando
-o aniversariante estiver chegando
- - observer: pessoa que faz supresa
- - subject: porteiro
- - event: aniversariante chegando
+/** 
+- A festa surpresa no apartamento + porteiro....
+- com observer + subject
+- lider da festa pede para porteiro avisar quando o aniversariante estiver chegando
 */
 
 const { Subject } = require("rxjs");
@@ -21,17 +18,16 @@ const liderDaFestaObserver = {
 
 
 console.log('Lider pediu favor do porteiro');
-// começar a olhar
 porteiroSubject.subscribe(liderDaFestaObserver);
 console.log('Lider subiu pro apartamento');
 
 let count = 0;
 const interval = setInterval(() => {
   if(count == 4){    
-    porteiroSubject.next('Acho que vi o carro... Ah não era não')
+    porteiroSubject.next('Acho que vi o carro... Ah, não era não')
   }
   if (count == 5) {
-    porteiroSubject.next("ELE chegou!");
+    porteiroSubject.next("Ele chegou!");
     porteiroSubject.complete();
     clearInterval(interval);
   }

@@ -1,9 +1,10 @@
 /**
- - aniversário porteiro traíra com + de 1 observer
-  - zelador mau vai avisar o aniversariante e
-  - porteiro bem vai avisar a  dona da festa
+- A festa surpresa no apartamento + porteiro + zelador...
+- zelador vai acabar com a surpresa
+- porteiro  vai avisar líder da festa
  */
 const { Subject } = require("rxjs");
+
 const porteiroSubject = new Subject();
 const liderDaFestaObserver = {
   next(mensagem){
@@ -17,9 +18,7 @@ const zeladorObserver = {
 }
 
 console.log('Lider pediu favor do porteiro, mas zelador escutou');
-// começar a olhar
 porteiroSubject.subscribe(liderDaFestaObserver);
-// zelador fica de olho tmb
 porteiroSubject.subscribe(zeladorObserver);
 console.log('Lider subiu pro apartamento');
 
